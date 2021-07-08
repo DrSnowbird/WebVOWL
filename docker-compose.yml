@@ -1,9 +1,36 @@
-version: '3'
+version: '3.1' 
 
 services:
-    
-    server:
-        build: .
-        command: catalina.sh run
-        ports:
-            - 8080:8080
+  webvowl-docker:
+    container_name: webvowl-docker
+    image: openkbs/webvowl-docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: catalina.sh run
+    #env_file:
+    #  - ./.env
+    volumes:
+      ## -- Use $HOME/data
+      #- $HOME/data-docker/knime-vnc-docker/data:/home/developer/data 
+      #- $HOME/data-docker/knime-vnc-docker/workspace:/home/developer/workspace 
+      ## -- Use current directory as root for mapping Volumes: --
+      - ./data:/home/developer/data
+      - ./workspace:/home/developer/workspace
+    ## -------------------------------
+    ## -- Change to your specific port
+    ## -------------------------------
+    ports:
+      - "28080:8080"
+    ## -----------------------------
+    ## -- Network setup if needed --
+    ## -----------------------------
+    # networks:
+    #  - dev_network
+
+#networks:
+#  dev_network:
+#    external:
+#      name: dev_network
+
+
