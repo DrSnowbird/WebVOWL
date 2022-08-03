@@ -12,7 +12,6 @@ ARG VERSION=1.1.7
 
 # Download WebVOWL to tomcat webapps directory as root app
 RUN rm -rf /usr/local/tomcat/webapps/* && \
-    wget -O /usr/local/tomcat/webapps/ROOT.war http://downloads.visualdataweb.de/webvowl_${VERSION}.war
-
+    wget -O /usr/local/tomcat/webapps/webvowl.war http://vowl.visualdataweb.org/downloads/webvowl_${VERSION}.war
 # Run default server
 CMD ["catalina.sh", "run"]

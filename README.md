@@ -1,4 +1,18 @@
 # WebVOWL Docker Container
+* [WebVOWL: Web-based Visualization of Ontologies](http://vowl.visualdataweb.org/webvowl.html)
+* [VOWL Specificatio](http://vowl.visualdataweb.org/)
+
+
+# Web UI
+* Go to http://0.0.0.0:18880/webvowl/
+
+
+# BUILD
+```
+./build.sh
+or
+make build
+```
 
 # RUN
 ```
@@ -7,12 +21,6 @@ or
 make up
 ```
 
-# BUILD
-```
-./build.sh
-or
-make build
-```
 # =============================================================
 # ============== Inherited from upstream (below) ==============
 # =============================================================
